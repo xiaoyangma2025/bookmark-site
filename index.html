@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的导航站</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            margin: 20px auto;
+            max-width: 500px;
+            position: relative;
+        }
+
+        #search {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        #search:focus {
+            outline: none;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+
+        .category {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .category h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f1f1;
+            display: flex;
+            align-items: center;
+        }
+
+        .category h2 i {
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: #3498db;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .link {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .link a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 0.95em;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .links {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+            
+            .category {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>我的导航站</h1>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="search" placeholder="搜索站点...">
+        </div>
+
+        <div id="bookmarks">
+            <!-- AI工具 -->
+            <div class="category">
+                <h2><i class="ri-robot-line"></i>AI工具</h2>
+                <div class="links">
+                    <div class="link">
+                        <a href="https://chat.openai.com" target="_blank">ChatGPT</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://liblibai.com" target="_blank">LiblibAI·哩布哩布AI</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://civitai.com" target="_blank">Civitai | 分享您的模型</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.youtube.com/watch?v=u0HwRC41uLM" target="_blank">ComfyUI: IPAdapter v2 Embeds</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.youtube.com/watch?v=KpVdB39llYQ" target="_blank">ComfyUI: IPAdapter v2 Style Transfer</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.youtube.com/watch?v=WDGtHhE6sPY" target="_blank">ComfyUI: Scaling-UP Image Restoration</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://magicposer.com" target="_blank">Magic Poser Web</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.perplexity.ai" target="_blank">Perplexity Labs</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 视频网站 -->
+            <div class="category">
+                <h2><i class="ri-video-line"></i>视频网站</h2>
+                <div class="links">
+                    <div class="link">
+                        <a href="https://www.youtube.com" target="_blank">YouTube</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.bilibili.com" target="_blank">Bilibili</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 实用工具 -->
+            <div class="category">
+                <h2><i class="ri-tools-line"></i>实用工具</h2>
+                <div class="links">
+                    <div class="link">
+                        <a href="https://www.aconvert.com/cn/image/" target="_blank">PNG转JPG</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.soundcloud.com" target="_blank">SoundCloud下载器</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.remove.bg" target="_blank">在线去背景</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 购物网站 -->
+            <div class="category">
+                <h2><i class="ri-shopping-bag-line"></i>购物网站</h2>
+                <div class="links">
+                    <div class="link">
+                        <a href="https://www.taobao.com" target="_blank">淘宝</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.tmall.com" target="_blank">天猫</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.jd.com" target="_blank">京东</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.amazon.com" target="_blank">亚马逊</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 社交媒体 -->
+            <div class="category">
+                <h2><i class="ri-user-line"></i>社交媒体</h2>
+                <div class="links">
+                    <div class="link">
+                        <a href="https://www.douyin.com" target="_blank">抖音</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://www.xiaohongshu.com" target="_blank">小红书</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 教育资源 -->
+            <div class="category">
+                <h2><i class="ri-book-line"></i>教育资源</h2>
+                <div class="links">
+                    <div class="link">
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                    </div>
+                    <div class="link">
+                        <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 搜索功能
+        document.getElementById('search').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const links = document.querySelectorAll('.link');
+            
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                const category = link.closest('.category');
+                
+                if (text.includes(searchTerm)) {
+                    link.style.display = '';
+                    if (category) category.style.display = '';
+                } else {
+                    link.style.display = 'none';
+                }
+                
+                // 如果分类下所有链接都被隐藏，则隐藏整个分类
+                if (category) {
+                    const visibleLinks = category.querySelectorAll('.link[style="display: "]').length;
+                    if (visibleLinks === 0) {
+                        category.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
